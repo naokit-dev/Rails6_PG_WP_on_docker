@@ -21,7 +21,7 @@ docker-compose run app rake db:create
 echo "create CSS for Webpack"
 mkdir app/javascript/stylesheets
 touch app/javascript/stylesheets/application.scss
-mv temp_files/copy_application.html.erb
+mv temp_files/copy_application.html.erb app/views/layouts/application.html.erb
 
 echo "clean temp filse"
 rm -r temp_files
