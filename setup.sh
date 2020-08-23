@@ -22,7 +22,7 @@ echo "create CSS for Webpack"
 mkdir app/javascript/stylesheets
 touch app/javascript/stylesheets/application.scss
 mv temp_files/copy_application.html.erb app/views/layouts/application.html.erb
-echo 'import "../stylesheets/appication.scss";' >> app/javascript/packs/application.js
+echo 'import "../stylesheets/application.scss";' >> app/javascript/packs/application.js
 
 
 echo "clean temp filse"
