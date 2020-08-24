@@ -29,6 +29,9 @@ RUN apk update && \
     build-base \
     curl-dev
 
+RUN yarn upgrade webpack@^4.0.0 \
+    yarn install
+
 COPY Gemfile $ROOT
 COPY Gemfile.lock $ROOT
 
