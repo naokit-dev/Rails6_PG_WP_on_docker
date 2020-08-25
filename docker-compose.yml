@@ -60,6 +60,7 @@ services:
 
 volumes:
   rails_cache:
-  yarn_cached:
+  node_modules:
+  yarn_cache:
   postgres:
   bundle:
