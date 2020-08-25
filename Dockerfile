@@ -39,9 +39,6 @@ RUN rm -rf /usr/local/bundle/cache/* /usr/local/share/.cache/* /var/cache/* /tmp
 
 COPY . $ROOT
 
-RUN yarn upgrade webpack@^4.0.0 \
-    yarn install
-
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
