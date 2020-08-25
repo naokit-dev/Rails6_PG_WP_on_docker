@@ -56,5 +56,8 @@ echo "clean temp filse"
 rm -r temp_files
 rm config/webpacker.ymlcp
 
+echo "docker-compose down"
+docker-compose down
+
 
 
