@@ -21,7 +21,8 @@ services:
     volumes:
       - .:/myapp:cached
       - rails_cache:/myapp/tmp/cache
-      - yarn_cached:/usr/local/share/.cache/yarn
+      - node_modules:/mysrc/node_modules:cached
+      - yarn_cache:/usr/local/share/.cache/yarn/v6:cached
       - bundle:/bundle:cached
     tmpfs:
       - /tmp

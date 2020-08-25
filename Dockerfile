@@ -29,9 +29,6 @@ RUN apk update && \
     build-base \
     curl-dev
 
-RUN yarn upgrade webpack@^4.0.0 \
-    yarn install
-
 COPY Gemfile $ROOT
 COPY Gemfile.lock $ROOT
 
@@ -41,6 +38,9 @@ RUN rm -rf /usr/local/bundle/cache/* /usr/local/share/.cache/* /var/cache/* /tmp
     apk del build-packs
 
 COPY . $ROOT
+
+RUN yarn upgrade webpack@^4.0.0 \
+    yarn install
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
