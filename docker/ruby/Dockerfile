@@ -7,9 +7,6 @@ ENV LANG=ja_JP.UTF-8 \
 
 WORKDIR $ROOT
 
-RUN rm -rf /var/cache/apk/* && \
-    rm -rf /tmp/*
-
 RUN apk update && \
     apk upgrade && \
     apk add --no-cache \
