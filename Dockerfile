@@ -27,8 +27,9 @@ RUN apk update && \
     postgresql \
     postgresql-dev \
     tzdata \
-    yarn && \
-    apk add --virtual build-packs --no-cache \
+    yarn \
+    git
+RUN apk add --virtual build-packs --no-cache \
     build-base \
     curl-dev
 
