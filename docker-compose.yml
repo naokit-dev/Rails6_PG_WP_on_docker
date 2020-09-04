@@ -24,8 +24,8 @@ services:
       TZ: Asia/Tokyo
 
   app:
-    build: ./docker/ruby
-      context: .
+    build:
+      context: ./docker/ruby
     image: rails_app
     tty: true
     stdin_open: true
