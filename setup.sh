@@ -13,8 +13,8 @@ docker-compose run app rails new . --force --no-deps --database=postgresql --ski
 echo "docker-compose build"
 docker-compose build
 
-echo "docker-compose run app rails webpacker:install"
-docker-compose run app rails webpacker:install
+# echo "docker-compose run app rails webpacker:install"
+# docker-compose run app rails webpacker:install
 
 echo "set check_yarn_integrity: false"
 sed -icp 's/check_yarn_integrity: true/check_yarn_integrity: false/g' config/webpacker.yml
