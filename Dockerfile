@@ -2,11 +2,7 @@ FROM ruby:2.7.1-alpine
 
 ENV LANG=ja_JP.UTF-8 \
     TZ=Asia/Tokyo \
-    ROOT=/myapp \
-    GEM_HOME=/bundle \
-    BUNDLE_PATH=$GEM_HOME \
-    BUNDLE_BIN=$BUNDLE_PATH/bin
-ENV PATH /app/bin:$BUNDLE_BIN:$PATH
+    ROOT=/myapp
 
 
 WORKDIR $ROOT

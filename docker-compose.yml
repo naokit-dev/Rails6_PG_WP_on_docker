@@ -44,7 +44,7 @@ services:
       - webpacker
 
   webpacker:
-    image: rails_app:webpacker
+    image: rails_app
     command: ./bin/webpack-dev-server
     volumes:
       - .:/myapp:cached
