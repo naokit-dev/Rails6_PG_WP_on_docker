@@ -48,6 +48,7 @@ services:
     command: ./bin/webpack-dev-server
     volumes:
       - .:/myapp:cached
+      - node_modules:/myapp/node_modules:cached
     environment:
       RAILS_ENV: ${RAILS_ENV:-development}
       NODE_ENV: ${NODE_ENV:-development}
