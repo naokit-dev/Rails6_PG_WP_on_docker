@@ -14,10 +14,10 @@ services:
       POSTGRES_INITDB_ARGS: "--encoding=UTF-8 --locale=ja_JP.UTF-8"
       TZ: Asia/Tokyo
 
-  rails: &rails_base
-
   app:
-    build: .
+    build:
+      context: .
+      image: rails_app
     tty: true
     stdin_open: true
     command: ash -c "rm -f tmp/pids/server.pid && ./bin/rails s -p 3000 -b '0.0.0.0'"
@@ -44,7 +44,7 @@ services:
       - webpacker
 
   webpacker:
-    build: .
+    image: rails_app:webpacker
     command: ./bin/webpack-dev-server
     volumes:
       - .:/myapp:cached

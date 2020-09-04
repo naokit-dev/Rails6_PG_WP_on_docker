@@ -11,6 +11,9 @@ ENV PATH /app/bin:$BUNDLE_BIN:$PATH
 
 WORKDIR $ROOT
 
+RUN rm -rf /var/cache/apk/* && \
+    rm -rf /tmp/*
+
 RUN apk update && \
     apk upgrade && \
     apk add --no-cache \
