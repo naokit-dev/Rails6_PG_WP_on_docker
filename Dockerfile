@@ -1,11 +1,11 @@
 FROM ruby:2.7.1-alpine
 
-ENV LANG=ja_JP.UTF-8
-ENV TZ=Asia/Tokyo
-ENV ROOT=/myapp \
+ENV LANG=ja_JP.UTF-8 \
+    TZ=Asia/Tokyo \
+    ROOT=/myapp \
     GEM_HOME=/bundle \
-    BUNDLE_PATH=$GEM_HOME
-ENV BUNDLE_BIN=$BUNDLE_PATH/bin
+    BUNDLE_PATH=$GEM_HOME \
+    BUNDLE_BIN=$BUNDLE_PATH/bin
 ENV PATH /app/bin:$BUNDLE_BIN:$PATH
 
 
@@ -46,4 +46,4 @@ ENTRYPOINT ["sh", "/usr/bin/entrypoint.sh"]
 EXPOSE 3000
 
 # Start the main process.
-# CMD ["rails", "server", "-b", "0.0.0.0"]
+CMD ["rails", "server", "-b", "0.0.0.0"]
