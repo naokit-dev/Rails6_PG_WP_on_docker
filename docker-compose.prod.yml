@@ -8,7 +8,6 @@ services:
     volumes:
       - ./docker/nginx/myapp.conf:/etc/nginx/conf.d/myapp.conf
       - public:/myapp/public
-
     depends_on:
       - app
 
@@ -31,7 +30,7 @@ services:
     image: rails_app
     tty: true
     stdin_open: true
-    command: ash -c "rm -f tmp/pids/server.pid && ./bin/rails s -p 3000 -b '0.0.0.0'"
+    command: bash -c "rm -f tmp/pids/server.pid && ./bin/rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - .:/myapp
       - public:/myapp/public
