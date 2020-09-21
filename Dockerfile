@@ -9,7 +9,7 @@ WORKDIR $ROOT
 
 RUN apk update && \
     apk upgrade && \
-    apk add --no-cache \
+    apk add --no-cache --no-install-recommends\
     gcc \
     g++ \
     libc-dev \
@@ -26,14 +26,14 @@ RUN apk update && \
 RUN apk add --virtual build-packs --no-cache \
     build-base \
     curl-dev
+#　不要ファイル削除
+RUN rm -rf /usr/local/bundle/cache/* /usr/local/share/.cache/* /var/cache/* /tmp/* && \
+    apk del build-packs
 
 COPY Gemfile $ROOT
 COPY Gemfile.lock $ROOT
 
 RUN bundle install -j4
-#　不要ファイル削除
-RUN rm -rf /usr/local/bundle/cache/* /usr/local/share/.cache/* /var/cache/* /tmp/* && \
-    apk del build-packs
 
 COPY . $ROOT
 

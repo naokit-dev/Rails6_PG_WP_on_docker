@@ -40,7 +40,6 @@ services:
       - bundle:/bundle:cached
       - public:/myapp/public
       - log:/myapp/log
-
     tmpfs:
       - /tmp
     ports:
@@ -62,6 +61,7 @@ services:
     command: ./bin/webpack-dev-server
     volumes:
       - .:/myapp:cached
+      - public:/myapp/public
       - node_modules:/myapp/node_modules:cached
     environment:
       RAILS_ENV: ${RAILS_ENV:-development}
