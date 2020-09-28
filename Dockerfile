@@ -9,7 +9,7 @@ WORKDIR $ROOT
 
 RUN apk update && \
     apk upgrade && \
-    apk add --no-cache --no-install-recommends\
+    apk add --no-cache \
     gcc \
     g++ \
     libc-dev \
